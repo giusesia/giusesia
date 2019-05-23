@@ -1,0 +1,36 @@
+<?page title="Dico Nome" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Scrivi Nome e Cognome" border="normal">
+		<hbox>
+			<calendar id="cal" onChange="in.value = cal.value" />
+			<datebox id="in" onChange="cal.value = in.value" />
+		</hbox>
+		<vlayout>
+			Scrivi Nome e Cognome:
+			<textbox id="txt_usuario" width="250px"
+				onCreate='txt_usuario.setValue("user")' onBlur='validausuario();'
+				onFocus='txt_usuario.setValue("");' />
+		</vlayout>
+		<zscript>
+			void validausuario() {
+				if (txt_usuario.getValue().trim() == "") {
+					txt_usuario.setValue("user");
+					alert("Inserisci Nome");
+				} else {
+					String[] nomeCognome = txt_usuario.getValue().split(" ");
+					alert("txt_usuario= " + txt_usuario.getValue());
+					if (nomeCognome.length > 1) {
+						String nome = nomeCognome[0];
+						String cognome = nomeCognome[1];
+		
+						alert("Nome :" + nome + " e Cognome :" + cognome);
+		
+					}
+		
+				}
+			}
+		</zscript>
+	</window>
+</zk>
+
+

@@ -1,0 +1,12 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+  <window border="normal" title="hello">  	
+    <button id="btn" label="show modal" onClick='modal.doModal();modal.getFellow("third").setFocus(true);'/>
+  </window>
+  
+  ​<window id="modal" visible="false">
+    <textbox />
+    <textbox focus="true" /> <!-- has no effect when the popup opens -->
+    <textbox id="third"/>
+  </window>
+</zk>

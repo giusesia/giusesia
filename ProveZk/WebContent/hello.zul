@@ -1,0 +1,55 @@
+<?page title="Ciao" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk">
+<window title="Ciao Bello" border="normal">
+
+   
+  
+
+<x:table width="100%" height="100%">
+<x:tr>
+<x:td width="100%" align="left">
+Ciao e Sempre Forza Napoli!!!
+
+   <button label="Bottone Del Ciao" onClick='alert("Ciao!")'/>
+   <zscript>
+       void alert(String message){
+           Messagebox.show(message);
+       }
+   </zscript>
+</x:td>
+</x:tr>
+<x:tr>
+
+<x:td width="100%" align="left">
+ <button label="Retrieve" onClick='alert("${desktop.webApp.version}")'/>
+ </x:td>
+
+
+</x:tr>
+<x:tr>
+
+<x:td width="100%" align="left">
+   Inserisci una proprietà: <textbox id="input"/>
+    <button label="Retrieve"
+     onClick="result.appendChild(new Label(System.getProperty(input.getValue())))"/>
+    <vlayout id="result"/>
+<button id="btn" label="Nome E cognome"> </button><div fulfill="btn.onClick=nomeCognome.zul"/>
+
+</x:td>
+
+
+</x:tr>
+
+<x:tr>
+
+<x:td width="100%" align="left">
+ <button id="btn2" label="Associazione Dati"> </button><div fulfill="btn2.onClick=data_binding.zul"/>
+ </x:td>
+
+
+</x:tr>
+</x:table>
+
+
+</window>
+</zk>

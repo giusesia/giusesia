@@ -1,0 +1,19 @@
+<?page title="Indovina Il Numero" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Indovina il numero giusto" border="normal">
+    <vlayout>
+    Scrivi il numero giusto, considerando che è compreso fra 0 e 99:
+    <intbox w:onOK="guess(this)" xmlns:w="client"/>
+    </vlayout>
+    <script><![CDATA[
+    var num = Math.floor(Math.random() * 100);
+    function guess(wgt) {
+        var val = wgt.getValue(),
+            mesg = val > num ? "No, Minore di " + val:
+                val < num ? "no, Maggiore di "+val: "Si, "+val + " Giusto!";
+        wgt.parent.appendChild(new zul.wgt.Label({value: mesg}));
+        wgt.setValue("");
+    }
+    ]]></script>
+</window>
+</zk>
